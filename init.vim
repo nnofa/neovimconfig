@@ -1,3 +1,4 @@
+let mapleader=" "
 lua require('plugins')
 set tabstop=2
 set shiftwidth=2
@@ -38,13 +39,14 @@ nnoremap <A-l> <C-w>l
 
 "FZF mapping
 nnoremap <C-p> :FZF<CR>
+nnoremap <Leader>rg :FzfLua grep<CR>
+nnoremap / /\c
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
 
-let mapleader=" "
 nnoremap <SPACE> <Nop>
 
 nnoremap <Leader>cd %:p:h
@@ -232,3 +234,5 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+let g:coc_global_extensions = ['coc-json', 'coc-html', 'coc-css', 'coc-tsserver', 'coc-prettier', 'coc-emmet', '@yaegassy/coc-volar']
