@@ -1,6 +1,9 @@
 vim.g.coc_global_extensions = {'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver'}
 vim.env.FZF_DEFAULT_COMMAND = 'rg --files'
 vim.api.nvim_set_keymap("i", "<TAB>", "pumvisible() ? '<C-n>' : '<TAB>'", {noremap = true, silent = true, expr = true})
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
 
 
 return require('packer').startup(function()
@@ -102,5 +105,14 @@ return require('packer').startup(function()
   }
 
   use 'mhinz/vim-startify'
+  use {
+    'lukas-reineke/indent-blankline.nvim', 
+    config = function()
+      require'indent_blankline'.setup {
+        show_end_line = true,
+        space_char_blankline = " ",
+      }
+    end
+  }
     
 end)
