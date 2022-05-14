@@ -47,6 +47,8 @@ let g:fzf_action = {
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
+nnoremap <Leader>cd %:p:h
+
 nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>b :bp<CR>
 nnoremap <Leader>f :bn<CR>
